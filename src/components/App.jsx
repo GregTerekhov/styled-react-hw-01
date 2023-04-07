@@ -1,9 +1,11 @@
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendsList/FriendsList';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
 import user from '../Data/user.json';
 import data from '../Data/data.json';
 import friends from '../Data/friends.json';
+import transactions from '../Data/transactions.json';
 
 const App = () => {
   return (
@@ -22,7 +24,8 @@ const App = () => {
         label={data.label}
         percentage={data.percentage}
       />
-      <FriendList friends={friends} />;
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };

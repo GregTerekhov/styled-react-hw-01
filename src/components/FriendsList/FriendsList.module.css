@@ -2,6 +2,7 @@
   list-style: none;
   width: 450px;
   margin: 0 auto;
+  margin-bottom: 40px;
   padding: 0;
   display: grid;
   grid-template-columns: auto;
