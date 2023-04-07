@@ -11,9 +11,9 @@ const Operation = ({ type, amount, currency }) => {
 };
 
 Operation.propTypes = {
-  type: PropTypes.string,
-  amount: PropTypes.string,
-  currency: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
 };
 
 export default Operation;

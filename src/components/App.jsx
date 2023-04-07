@@ -10,11 +10,7 @@ const App = () => {
   return (
     <div>
       <Profile />
-      <Statistics
-        title={data.title}
-        label={data.label}
-        percentage={data.percentage}
-      />
+      <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
     </div>

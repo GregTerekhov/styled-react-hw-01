@@ -1,7 +1,7 @@
-import ProfileDescription from './ProfileDescription';
+import ProfileDescription from './ProfileDescription/ProfileDescription';
 import user from '../../Data/user.json';
 import css from './Profile.module.css';
-import ProfileStats from './ProfileStats';
+import ProfileStats from './ProfileStats/ProfileStats';
 
 const Profile = () => {
   return (
@@ -12,7 +12,11 @@ const Profile = () => {
         location={user.location}
         avatar={user.avatar}
       />
-      <ProfileStats stats={user.stats} />
+      <ProfileStats
+        followers={user.stats.followers}
+        views={user.stats.views}
+        likes={user.stats.likes}
+      />
     </div>
   );
 };

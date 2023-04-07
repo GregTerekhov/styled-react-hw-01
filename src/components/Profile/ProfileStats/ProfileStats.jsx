@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './ProfileStats.module.css';
 
-const ProfileStats = ({ stats: { followers, views, likes } }) => {
+const ProfileStats = ({ followers, views, likes }) => {
   return (
     <ul className={css.stats}>
       <li>
@@ -21,9 +21,9 @@ const ProfileStats = ({ stats: { followers, views, likes } }) => {
 };
 
 ProfileStats.propTypes = {
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };
 
 export default ProfileStats;
