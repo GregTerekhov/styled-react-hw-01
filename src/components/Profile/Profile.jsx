@@ -1,43 +1,20 @@
-import PropTypes from 'prop-types';
+import ProfileDescription from './ProfileDescription';
+import user from '../../Data/user.json';
 import css from './Profile.module.css';
-const Profile = ({username, tag, location, avatar, followers, views, likes}) => {
-    return <div className={css.profile}>
-    <div className={css.description}>
-      <img
-        src={avatar} width="260" height="210"
-        alt="User avatar"
-        className={css.avatar}
-      />
-      <p className={css.name}>{username}</p>
-      <p className={css.tag}>@{tag}</p>
-      <p className={css.location}>{location}</p>
-    </div>
-  
-    <ul className={css.stats}>
-      <li>
-        <span className={css.label}>Followers</span>
-        <span className={css.quantity}>{followers}</span>
-      </li>
-      <li>
-        <span className={css.label}>Views</span>
-        <span className={css.quantity}>{views}</span>
-      </li>
-      <li>
-        <span className={css.label}>Likes</span>
-        <span className={css.quantity}>{likes}</span>
-      </li>
-    </ul>
-  </div>
-}
+import ProfileStats from './ProfileStats';
 
-Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
-}
+const Profile = () => {
+  return (
+    <div className={css.profile}>
+      <ProfileDescription
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+      />
+      <ProfileStats stats={user.stats} />
+    </div>
+  );
+};
 
 export default Profile;
