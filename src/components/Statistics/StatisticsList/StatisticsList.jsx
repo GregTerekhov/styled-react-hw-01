@@ -26,7 +26,7 @@ StatisticsList.propTypes = {
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
-  ),
+  ).isRequired,
 };
 
 export default StatisticsList;

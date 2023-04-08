@@ -4,11 +4,7 @@ import css from './FriendsListItem.module.css';
 const FriendsListItem = ({ avatar, name, isOnline }) => {
   return (
     <li className={css.item}>
-      {isOnline ? (
-        <span className={css.statusOnline}></span>
-      ) : (
-        <span className={css.statusOffline}></span>
-      )}
+      <span className={isOnline ? css.statusOnline : css.statusOffline} />
       <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
       <p className={css.friendName}>{name}</p>
     </li>
