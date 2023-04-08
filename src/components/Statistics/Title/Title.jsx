@@ -10,5 +10,3 @@ Title.propTypes = {
 };
 
 export default Title;
-
-//{ <h2 className={css.title}>{title ? title : "Upload stats"}</h2> }
