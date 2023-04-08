@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from './Title.module.css';
 
 const Title = ({ title }) => {
-  return title && <h2 className={css.title}>{title}</h2>;
+  return <h2 className={css.title}>{title}</h2>;
 };
 
 Title.propTypes = {

@@ -3,10 +3,10 @@ import Item from '../Item/Item';
 import { getRandomHexColor } from 'functions';
 import css from './StatisticsList.module.css';
 
-const StatisticsList = ({ stats }) => {
+const StatisticsList = ({ items }) => {
   return (
     <ul className={css.statList}>
-      {stats.map(({ id, label, percentage }) => (
+      {items.map(({ id, label, percentage }) => (
         <li
           className={css.item}
           key={id}
@@ -20,7 +20,7 @@ const StatisticsList = ({ stats }) => {
 };
 
 StatisticsList.propTypes = {
-  stats: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
