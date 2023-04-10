@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { TableRows, Td } from './Operation.styled';
 
-const Operation = ({ type, amount, currency }) => {
+export const Operation = ({ type, amount, currency }) => {
   return (
-    <tr>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>
+    <TableRows>
+      <Td>{type}</Td>
+      <Td>{amount}</Td>
+      <Td>{currency}</Td>
+    </TableRows>
   );
 };
 
@@ -15,5 +16,3 @@ Operation.propTypes = {
   amount: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,
 };
-
-export default Operation;

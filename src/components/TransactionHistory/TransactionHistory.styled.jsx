@@ -1,9 +1,6 @@
-thead,
-tbody {
-  margin: 0;
-}
+import styled from '@emotion/styled';
 
-.transaction-history {
+export const TransactionTable = styled.table`
   margin: 0 auto;
   margin-bottom: 40px;
   table-layout: fixed;
@@ -13,28 +10,22 @@ tbody {
   border-collapse: collapse;
   text-align: center;
   background-color: #3fc5ee;
-}
+`;
 
-thead {
+export const TableHead = styled.thead`
   color: #ecf6f8;
   text-transform: uppercase;
-}
+  margin: 0;
+  padding: 16px;
+`;
 
-tbody {
+export const TableBody = styled.tbody`
   color: grey;
   text-transform: capitalize;
-}
+  margin: 0;
+`;
 
-tbody tr:nth-child(odd) {
-  background-color: #fafafa;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #e9e9e9;
-}
-
-td,
-th {
-  padding: 16px;
+export const Th = styled.th`
   border: 1px solid #ddd;
-}
+  padding: 16px;
+`;

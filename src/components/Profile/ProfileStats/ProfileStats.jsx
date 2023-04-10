@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
-import css from './ProfileStats.module.css';
+import { Stats, Label, Quantity } from './ProfileStats.styled';
 
-const ProfileStats = ({ stats }) => {
+export const ProfileStats = ({ stats }) => {
   return (
-    <ul className={css.stats}>
+    <Stats>
       <li>
-        <span className={css.label}>Followers</span>
-        <span className={css.quantity}>{stats.followers}</span>
+        <Label>Followers</Label>
+        <Quantity>{stats.followers}</Quantity>
       </li>
       <li>
-        <span className={css.label}>Views</span>
-        <span className={css.quantity}>{stats.views}</span>
+        <Label>Views</Label>
+        <Quantity>{stats.views}</Quantity>
       </li>
       <li>
-        <span className={css.label}>Likes</span>
-        <span className={css.quantity}>{stats.likes}</span>
+        <Label>Likes</Label>
+        <Quantity>{stats.likes}</Quantity>
       </li>
-    </ul>
+    </Stats>
   );
 };
 
@@ -27,5 +27,3 @@ ProfileStats.propTypes = {
     likes: PropTypes.number.isRequired,
   }).isRequired,
 };
-
-export default ProfileStats;
