@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://GregTerekhov.github.io/styled-react-hw-01/",
   "dependencies": {
+    "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@testing-library/jest-dom": "^5.16.3",
