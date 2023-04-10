@@ -1,21 +1,28 @@
 import PropTypes from 'prop-types';
-import Item from '../Item/Item';
+import { Item } from '../Item/Item';
 import { getRandomHexColor } from 'functions';
-import css from './StatisticsList.module.css';
+import { StatList, ListItem } from './StatisticsList.styled';
 
-const StatisticsList = ({ items }) => {
+export const StatisticsList = ({ items }) => {
+  const reducedData = items.reduce((result, current) => {
+    const existingObj = result.find(obj => obj.label === current.label);
+
+    if (existingObj) {
+      existingObj.percentage += current.percentage;
+    } else {
+      result.push(current);
+    }
+
+    return result;
+  }, []);
   return (
-    <ul className={css.statList}>
-      {items.map(({ id, label, percentage }) => (
-        <li
-          className={css.item}
-          key={id}
-          style={{ backgroundColor: getRandomHexColor() }}
-        >
+    <StatList>
+      {reducedData.map(({ id, label, percentage }) => (
+        <ListItem key={id} style={{ backgroundColor: getRandomHexColor() }}>
           <Item label={label} percentage={percentage} />
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </StatList>
   );
 };
 
@@ -28,5 +35,3 @@ StatisticsList.propTypes = {
     })
   ).isRequired,
 };
-
-export default StatisticsList;

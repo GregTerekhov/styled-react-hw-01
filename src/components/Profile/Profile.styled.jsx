@@ -1,7 +1,9 @@
-.profile {
+import styled from '@emotion/styled';
+
+export const Container = styled.div`
   margin: 30px auto;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   width: 450px;
   overflow: hidden;
-}
+`;

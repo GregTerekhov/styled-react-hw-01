@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import ProfileDescription from './ProfileDescription/ProfileDescription';
-import ProfileStats from './ProfileStats/ProfileStats';
-import css from './Profile.module.css';
+import { ProfileDescription } from './ProfileDescription/ProfileDescription';
+import { ProfileStats } from './ProfileStats/ProfileStats';
+import { Container } from './Profile.styled';
 
-const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className={css.profile}>
+    <Container>
       <ProfileDescription
         username={username}
         tag={tag}
@@ -13,7 +13,7 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
         avatar={avatar}
       />
       <ProfileStats stats={stats} />
-    </div>
+    </Container>
   );
 };
 
@@ -28,5 +28,3 @@ Profile.propTypes = {
     likes: PropTypes.number.isRequired,
   }).isRequired,
 };
-
-export default Profile;
