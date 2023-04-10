@@ -1,4 +1,4 @@
-import { css } from '@emotion/styled';
+import { css } from '@emotion/css';
 
 export const GlobalStyles = css`
   body {
