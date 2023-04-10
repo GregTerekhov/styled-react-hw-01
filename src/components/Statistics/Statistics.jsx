@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import StatisticsList from './StatisticsList/StatisticsList';
-import Title from './Title/Title';
-import css from './Statistics.module.css';
+import { StatisticsList } from './StatisticsList/StatisticsList';
+import { Title } from './Title/Title';
+import { StatSection } from './Statistics.styled';
 
-const Statistics = ({ title, stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
-    <section className={css.statistics}>
+    <StatSection>
       {title && <Title title={title} />}
       <StatisticsList items={stats} />
-    </section>
+    </StatSection>
   );
 };
 
@@ -22,5 +22,3 @@ Statistics.propTypes = {
     })
   ).isRequired,
 };
-
-export default Statistics;

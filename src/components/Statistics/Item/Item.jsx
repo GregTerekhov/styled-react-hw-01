@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
-import css from './Item.module.css';
+import { Label, Percentage } from './Item.styled';
 
-const Item = ({ label, percentage }) => {
+export const Item = ({ label, percentage }) => {
   return (
     <Fragment>
-      <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}%</span>
+      <Label>{label}</Label>
+      <Percentage>{percentage}%</Percentage>
     </Fragment>
   );
 };
@@ -15,5 +15,3 @@ Item.propTypes = {
   label: PropTypes.string.isRequired,
   percentage: PropTypes.number.isRequired,
 };
-
-export default Item;

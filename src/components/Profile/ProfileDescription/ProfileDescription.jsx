@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
-import css from './ProfileDescription.module.css';
+import {
+  Description,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+} from './ProfileDescription.styled';
 
-const ProfileDescription = ({ username, tag, location, avatar }) => {
+export const ProfileDescription = ({ username, tag, location, avatar }) => {
   return (
-    <div className={css.description}>
-      <img
-        src={avatar}
-        width="260"
-        height="210"
-        alt="User avatar"
-        className={css.avatar}
-      />
-      <p className={css.name}>{username}</p>
-      <p className={css.tag}>@{tag}</p>
-      <p className={css.location}>{location}</p>
-    </div>
+    <Description>
+      <Avatar src={avatar} width="260" height="210" alt="User avatar" />
+      <Name>{username}</Name>
+      <Tag>@{tag}</Tag>
+      <Location>{location}</Location>
+    </Description>
   );
 };
 
@@ -24,5 +24,3 @@ ProfileDescription.propTypes = {
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
 };
-
-export default ProfileDescription;

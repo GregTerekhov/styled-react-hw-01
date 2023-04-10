@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
-import css from './Title.module.css';
+import { TitleStat } from './Title.styled';
 
-const Title = ({ title }) => {
-  return <h2 className={css.title}>{title}</h2>;
+export const Title = ({ title }) => {
+  return <TitleStat>{title}</TitleStat>;
 };
 
 Title.propTypes = {
   title: PropTypes.string,
 };
-
-export default Title;
