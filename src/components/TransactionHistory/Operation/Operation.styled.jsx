@@ -12,4 +12,5 @@ export const TableRows = styled.tr`
 
 export const Td = styled.td`
   padding: 16px;
+  border: 1px solid #ddd;
 `;
