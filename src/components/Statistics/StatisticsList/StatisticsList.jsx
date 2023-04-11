@@ -1,20 +1,10 @@
 import PropTypes from 'prop-types';
 import { Item } from '../Item/Item';
-import { getRandomHexColor } from 'functions';
+import { getRandomHexColor, getNormalizedData } from 'services/index';
 import { StatList, ListItem } from './StatisticsList.styled';
 
 export const StatisticsList = ({ items }) => {
-  const reducedData = items.reduce((result, current) => {
-    const existingObj = result.find(obj => obj.label === current.label);
-
-    if (existingObj) {
-      existingObj.percentage += current.percentage;
-    } else {
-      result.push(current);
-    }
-
-    return result;
-  }, []);
+  const reducedData = getNormalizedData(items);
   return (
     <StatList>
       {reducedData.map(({ id, label, percentage }) => (
